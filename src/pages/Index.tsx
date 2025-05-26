@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -104,16 +103,12 @@ const Index = () => {
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center">
             <img 
               src="/lovable-uploads/b059634a-e514-4e56-aabb-a9ee24fed262.png" 
               alt="PaperPath Logo" 
-              className="h-10 w-auto"
+              className="h-12 w-auto"
             />
-            <div>
-              <h1 className="text-2xl font-bold text-slate-800">PaperPath</h1>
-              <p className="text-sm text-slate-600">Clear steps, smart documents</p>
-            </div>
           </div>
           <div className="flex items-center space-x-4">
             {audioEnabled && (
@@ -279,7 +274,6 @@ const Index = () => {
               alt="PaperPath Logo" 
               className="h-8 w-auto"
             />
-            <span className="text-xl font-bold">PaperPath</span>
           </div>
           <p className="text-slate-400">
             Making bureaucracy accessible for everyone, everywhere.
