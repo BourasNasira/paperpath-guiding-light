@@ -54,7 +54,7 @@ const Index = () => {
       description: "Clear, step-by-step instructions for all required documents",
       type: "documents",
       interactive: true,
-      image: "/lovable-uploads/71cbee47-6afb-4621-b9a3-d4c698daadc4.png"
+      image: "/lovable-uploads/53675c6a-0664-4564-b4a6-ee3dc51f780b.png"
     },
     {
       icon: <Globe className="h-6 w-6" />,
@@ -62,7 +62,7 @@ const Index = () => {
       description: `Get help in your native language (Current: ${selectedLanguage})`,
       type: "language",
       interactive: true,
-      image: "/lovable-uploads/306d09ce-68c5-42bd-93c5-289f9716d457.png"
+      image: "/lovable-uploads/4a766871-d8ed-499a-9c13-f468ad7626eb.png"
     },
     {
       icon: <Volume2 className="h-6 w-6" />,
@@ -70,7 +70,7 @@ const Index = () => {
       description: `Accessible audio guidance for visually impaired users ${audioEnabled ? '(Active)' : '(Click to enable)'}`,
       type: "audio",
       interactive: true,
-      image: "/lovable-uploads/2b43afc9-3666-4d73-ab0d-ab0e0890cbde.png"
+      image: "/lovable-uploads/6657bec6-eb11-47fc-b385-2de99152a5e2.png"
     },
     {
       icon: <MapPin className="h-6 w-6" />,
@@ -78,7 +78,7 @@ const Index = () => {
       description: "Locate the right government offices near you",
       type: "offices",
       interactive: true,
-      image: "/lovable-uploads/2b43afc9-3666-4d73-ab0d-ab0e0890cbde.png"
+      image: "/lovable-uploads/81d93bdd-c159-439f-a8c7-373960f05755.png"
     }
   ];
 
@@ -202,8 +202,8 @@ const Index = () => {
             </div>
             <div className="relative">
               <img 
-                src="/lovable-uploads/71cbee47-6afb-4621-b9a3-d4c698daadc4.png" 
-                alt="Woman using PaperPath app" 
+                src="/lovable-uploads/f37c7d4f-c34e-4427-b9c6-d03bef5c3d26.png" 
+                alt="People using PaperPath app together" 
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />
             </div>
@@ -281,8 +281,8 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <img 
-                src="/lovable-uploads/2b43afc9-3666-4d73-ab0d-ab0e0890cbde.png" 
-                alt="Voice command and accessibility features"
+                src="/lovable-uploads/6657bec6-eb11-47fc-b385-2de99152a5e2.png" 
+                alt="Senior using voice command features"
                 className="w-full h-48 object-cover rounded-lg mb-6"
               />
               <h4 className="text-xl font-bold text-slate-800 mb-3">Voice Command & Accessibility</h4>
@@ -292,8 +292,8 @@ const Index = () => {
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <img 
-                src="/lovable-uploads/306d09ce-68c5-42bd-93c5-289f9716d457.png" 
-                alt="Multi-language support"
+                src="/lovable-uploads/4a766871-d8ed-499a-9c13-f468ad7626eb.png" 
+                alt="Woman using multi-language support"
                 className="w-full h-48 object-cover rounded-lg mb-6"
               />
               <h4 className="text-xl font-bold text-slate-800 mb-3">Breaking Language Barriers</h4>
