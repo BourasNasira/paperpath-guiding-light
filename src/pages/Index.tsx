@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -52,28 +53,32 @@ const Index = () => {
       title: "Smart Document Guidance",
       description: "Clear, step-by-step instructions for all required documents",
       type: "documents",
-      interactive: true
+      interactive: true,
+      image: "/lovable-uploads/71cbee47-6afb-4621-b9a3-d4c698daadc4.png"
     },
     {
       icon: <Globe className="h-6 w-6" />,
       title: "Multi-language Support",
       description: `Get help in your native language (Current: ${selectedLanguage})`,
       type: "language",
-      interactive: true
+      interactive: true,
+      image: "/lovable-uploads/306d09ce-68c5-42bd-93c5-289f9716d457.png"
     },
     {
       icon: <Volume2 className="h-6 w-6" />,
       title: "Audio Support",
       description: `Accessible audio guidance for visually impaired users ${audioEnabled ? '(Active)' : '(Click to enable)'}`,
       type: "audio",
-      interactive: true
+      interactive: true,
+      image: "/lovable-uploads/2b43afc9-3666-4d73-ab0d-ab0e0890cbde.png"
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Office Finder",
       description: "Locate the right government offices near you",
       type: "offices",
-      interactive: true
+      interactive: true,
+      image: "/lovable-uploads/2b43afc9-3666-4d73-ab0d-ab0e0890cbde.png"
     }
   ];
 
@@ -167,30 +172,41 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-            Navigate bureaucracy with confidence
-          </h2>
-          <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-            PaperPath simplifies complex administrative processes for foreigners, immigrants, 
-            and people in remote areas. Get step-by-step guidance in your language.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3"
-              onClick={() => setCurrentView('processes')}
-            >
-              Start Your Process
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-teal-600 text-teal-600 hover:bg-teal-50 px-8 py-3"
-              onClick={() => setCurrentView('offices')}
-            >
-              Find Offices
-            </Button>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+                Navigate bureaucracy with confidence
+              </h2>
+              <p className="text-xl text-slate-600 mb-8">
+                PaperPath simplifies complex administrative processes for foreigners, immigrants, 
+                and people in remote areas. Get step-by-step guidance in your language.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  size="lg" 
+                  className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3"
+                  onClick={() => setCurrentView('processes')}
+                >
+                  Start Your Process
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-teal-600 text-teal-600 hover:bg-teal-50 px-8 py-3"
+                  onClick={() => setCurrentView('offices')}
+                >
+                  Find Offices
+                </Button>
+              </div>
+            </div>
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/71cbee47-6afb-4621-b9a3-d4c698daadc4.png" 
+                alt="Woman using PaperPath app" 
+                className="w-full h-auto rounded-2xl shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -208,7 +224,7 @@ const Index = () => {
             {features.map((feature, index) => (
               <Card 
                 key={index} 
-                className={`text-center transition-all duration-200 ${
+                className={`text-center transition-all duration-200 overflow-hidden ${
                   feature.interactive 
                     ? 'hover:shadow-lg cursor-pointer hover:border-teal-200 hover:scale-105' 
                     : 'hover:shadow-lg'
@@ -220,15 +236,23 @@ const Index = () => {
                 }`}
                 onClick={() => feature.interactive && handleFeatureClick(feature.type)}
               >
-                <CardHeader>
-                  <div className={`mx-auto w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${
+                <div className="relative h-40 overflow-hidden">
+                  <img 
+                    src={feature.image} 
+                    alt={feature.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className={`absolute top-4 left-4 w-10 h-10 rounded-lg flex items-center justify-center ${
                     (feature.type === 'language' && selectedLanguage !== 'English') ||
                     (feature.type === 'audio' && audioEnabled)
                       ? 'bg-teal-600 text-white'
-                      : 'bg-teal-100 text-teal-600'
+                      : 'bg-white/90 text-teal-600'
                   }`}>
                     {feature.icon}
                   </div>
+                </div>
+                <CardHeader className="pb-2">
                   <CardTitle className="text-lg">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -241,6 +265,42 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-teal-50 to-blue-50">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-3xl font-bold text-center text-slate-800 mb-4">
+            Helping people worldwide
+          </h3>
+          <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
+            See how PaperPath is making a difference in people's lives across different communities
+          </p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <img 
+                src="/lovable-uploads/2b43afc9-3666-4d73-ab0d-ab0e0890cbde.png" 
+                alt="Voice command and accessibility features"
+                className="w-full h-48 object-cover rounded-lg mb-6"
+              />
+              <h4 className="text-xl font-bold text-slate-800 mb-3">Voice Command & Accessibility</h4>
+              <p className="text-slate-600">
+                "PaperPath's voice features and screen reader compatibility made it possible for me to complete my visa application independently. The audio guidance was clear and helpful."
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <img 
+                src="/lovable-uploads/306d09ce-68c5-42bd-93c5-289f9716d457.png" 
+                alt="Multi-language support"
+                className="w-full h-48 object-cover rounded-lg mb-6"
+              />
+              <h4 className="text-xl font-bold text-slate-800 mb-3">Breaking Language Barriers</h4>
+              <p className="text-slate-600">
+                "As a new immigrant, understanding the documentation process was overwhelming. PaperPath's multi-language support helped me navigate everything in my native language."
+              </p>
+            </div>
           </div>
         </div>
       </section>
